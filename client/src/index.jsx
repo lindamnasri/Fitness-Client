@@ -7,6 +7,7 @@ import ClientDeatils from './components/ClientDeatils.jsx'
 import Program from './components/Program.jsx'
 const App = () => {
   const [lists, setLists] = useState([])
+ 
   const [view,setView]=useState('client')
   const [sucess,setSucces]=useState(false)
   const [clientList,setClient]=useState({})
@@ -20,25 +21,30 @@ const App = () => {
     setView('ClientDeatils')
   }
   useEffect(() => {
-   axios.get("http://localhost:3000/api/client/getAll").then((response)=>{
+fetchData()
+   fetchProgram()
+  
+  }, [sucess])
+
+const fetchProgram=()=>{
+  axios.get("http://localhost:3000/api/program/getAll").then((response)=>{
+    setProgram(response.data)
+   }).catch((err)=>{
+    console.log(err)
+   })
+}
+
+const fetchData=()=>{
+  axios.get("http://localhost:3000/api/client/getAll").then((response)=>{
     setLists(response.data)
    }).catch((err)=>{
     console.log(err)
    })
-  }, [sucess])
+}
 
-
-  useEffect(() => {
-    axios.get("http://localhost:3000/api/program/getAll").then((response)=>{
-     setProgram(response.data)
-    }).catch((err)=>{
-     console.log(err)
-    })
-   }, [sucess])
-
-const create=(name,age,weight,coach_id,program_id)=>{
+const create=(name,age,weight,coach_id)=>{
 axios.post("http://localhost:3000/api/client/add",
-{name,age,weight,coach_id,program_id}).then(()=>{
+{name,age,weight,coach_id}).then(()=>{
   setView('client')
 setSucces(!sucess)
 
@@ -67,6 +73,17 @@ setSucces(!sucess)
     }) 
   }
 
+  
+  const programList=(type,intensity,duration,frequency,client_id)=>{   
+axios.post("http://localhost:3000/api/clientProgram/add",
+{type,intensity,duration,frequency,client_id}).then((list)=>{
+  console.log(list)
+setSucces(!sucess)
+}).catch((err)=>{
+console.log(err)
+})
+  }
+
   const renderView=()=>{
     if(view==='client'){
       return <Client lists={lists} display={display}/>
@@ -80,7 +97,7 @@ setSucces(!sucess)
       return <Program program={program} create={createprogram}/>
     }
     else {
-      return <ClientDeatils clientList={clientList} deleted={deleted}/>
+      return <ClientDeatils program={program}  clientList={clientList} deleted={deleted}  programList={programList}/>
     }
   }
 

@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-
+import ProgramDet from './ProgramDet.jsx'
 const Program = (props) => {
-    type,intensity,duration,frequency
+    
     const [type,setType]=useState('')
     const [intensity,setIntensity]=useState('')
     const [duration,setDuration]=useState('')
@@ -13,7 +13,7 @@ const Program = (props) => {
       <div>
         <input onChange={(e)=>{setType(e.target.value)}} placeholder='type' type='text'/>
         </div>
-     
+           
       <input onChange={(e)=>{setIntensity(e.target.value)}} placeholder='intensity' type='text'/>
       <input onChange={(e)=>{setDuration(e.target.value)}} placeholder='duration' type='text'/>
     
@@ -26,6 +26,7 @@ const Program = (props) => {
           {props.program.map((list)=>{
            return( <div>
             <h3 className="list">{list.type} </h3>
+           
             <ul className="list-list">
               <li className="list">{list.intensity}</li>
               <li className="list">{list.duration}</li>

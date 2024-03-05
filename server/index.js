@@ -12,12 +12,13 @@ const cors =require('cors')
 const programRoute=require("./routes/program")
 const clientRoute=require("./routes/client")
 const coachRoute=require("./routes/coach")
-
+const clientProgram=require("./routes/clientProgram")
 app.use(cors())
 app.use(express.json());
 app.use('/api/client',clientRoute)
 app.use('/api/coach',coachRoute)
 app.use('/api/program',programRoute)
+app.use('/api/clientProgram',clientProgram)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/dist"));
 

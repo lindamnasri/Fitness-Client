@@ -6,9 +6,9 @@ module.exports.getAll=()=>{
     const result=connection.query(sql)
     return result
   }
-  module.exports.add=(name,age,weight,coach_id,program_id)=>{
-    const sql="insert into client (name,age,weight,coach_id,program_id) values (?,?,?,?,?)"
-    const result=connection.query(sql,[name,age,weight,coach_id,program_id])
+  module.exports.add=(name,age,weight,coach_id)=>{
+    const sql="insert into client (name,age,weight,coach_id) values (?,?,?,?)"
+    const result=connection.query(sql,[name,age,weight,coach_id])
     return result 
   }
     module.exports.getOne=(id)=>{

@@ -17,8 +17,8 @@ clients.getOne(id).then((list)=>{
 })
 },
 addClient:(req,res)=>{
-    console.log(req.body)
-clients.add(req.body.name,req.body.age,req.body.weight,req.body.coach_id,req.body.program_id).then((list)=>{
+    console.log(req.body.coach_id)
+clients.add(req.body.name,req.body.age,req.body.weight,req.body.coach_id).then((list)=>{
     res.status(201).json(list)
 }).catch((err)=>{
     console.log("errrrr")

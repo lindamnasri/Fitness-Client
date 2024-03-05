@@ -9,9 +9,10 @@ body {
 }
 
 .client-list {
-  min-height: 30px;
-  margin: 20px;
-  padding: 20px;
+  width: 40%;
+  min-height: 20px;
+  margin: 15px;
+  padding: 15px;
   background-color: #fdfdfd;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -21,12 +22,7 @@ body {
   margin-bottom: 10px;
 }
 
-.list-program li {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f5eded;
-}
+
 .logo {
   font-weight: bold;
   font-size: 24px;
@@ -68,3 +64,15 @@ background-color: #f5eded;
     color: #fff;
     cursor: pointer; 
 }
+.prog{
+display :flex;
+flex-wrap:wrap; 
+border: 5px solid #92f7f7;
+border-radius: 5px;
+float: right;
+/* height:max-content */
+}
+
+
+
+
