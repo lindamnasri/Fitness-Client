@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i");
+
+body {
+  font-family: "PT Serif", sans-serif;
+  margin: 0;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  font-size: 16px;
+}
+
+.client-list {
+  min-height: 30px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.list {
+  margin-bottom: 10px;
+}
+
+.list-program li {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5eded;
+}
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 10px;
+  font-family: "PT Serif", serif;
+  color: #fff;
+}
+
+
+.nav {
+  background-color: #2980b9;
+  padding: 10px;
+  display: flex;
+  justify-content: first baseline; 
+  /* right */
+  align-items: center;
+}
+
+.nav span {
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.client-details{
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f5eded;
+}
+.client-name{
+    margin:10px;
+    font-size:18px;
+}
+.button{
+    
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer; 
+}
