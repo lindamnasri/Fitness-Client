@@ -14,3 +14,7 @@ module.exports.getAll=()=>{
     const result=connection.query(sql,[type,client_id,intensity,duration,frequency])
     return result 
   }
+  module.exports.delete=(id)=>{
+    const sql= 'delete from clientProgram where client_id=?'
+    return connection.query(sql,[id])
+   }

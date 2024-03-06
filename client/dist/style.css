@@ -1,78 +1,129 @@
+
 @import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i");
 
 body {
   font-family: "PT Serif", sans-serif;
-  margin: 0;
   color: #2c3e50;
-  background-color: #ecf0f1;
+  background-color: #f5f6fa; 
   font-size: 16px;
+  line-height: 1.6; 
 }
 
 .client-list {
   width: 40%;
-  min-height: 20px;
-  margin: 15px;
-  padding: 15px;
-  background-color: #fdfdfd;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: #fff; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px;
+  
 }
 
+
 .list {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 
 .logo {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px; 
   margin-left: 10px;
   font-family: "PT Serif", serif;
-  color: #fff;
+  color: #4852b0; 
 }
 
 
 .nav {
-  background-color: #2980b9;
-  padding: 10px;
+  background-color: #4852b0; 
+  padding: 15px;
   display: flex;
-  justify-content: first baseline; 
-  /* right */
+  justify-content: space-between; 
   align-items: center;
+  
 }
-
 .nav span {
-  padding: 5px 10px;
-  margin-right: 5px;
-  font-size: 18px;
+  font-size: 20px;
   color: #fff;
   cursor: pointer;
 }
-.client-details{
-padding: 20px;
-border: 1px solid #ccc;
-border-radius: 5px;
-background-color: #f5eded;
+
+
+.client-details {
+  padding: 30px;
+  border: 1px solid #f5ecec; 
+  border-radius: 8px;
+  background-color: #fff; /
+  
 }
-.client-name{
-    margin:10px;
-    font-size:18px;
-}
-.button{
-    
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer; 
-}
-.prog{
-display :flex;
-flex-wrap:wrap; 
-border: 5px solid #92f7f7;
-border-radius: 5px;
-float: right;
-/* height:max-content */
+
+.client-name {
+  margin-bottom: 15px;
+  font-size: 20px; 
+  color: #4852b0; 
 }
 
 
+.button {
+  padding: 10px 20px;
+  background-color: #3498db; 
+  color: #fff;
+  font-size: 16px; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+.prog {
+  display: flex;
+  border: 5px solid #4852b0; 
+  border-radius: 8px;
+  overflow: hidden; 
+}
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px; 
+}
+.add-container{
+  width: 300px;
+  margin: 20px;
+}
+.add-input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.add-button{
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container-prog{
+  width: 300px;
+  margin: 20px;
+ 
+}
+
+.prog-input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.prog-button{
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
 

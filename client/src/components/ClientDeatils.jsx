@@ -21,27 +21,57 @@ const festchListProgram=(id)=>{
   console.log(err)
  })
 } 
+const programList=(type,intensity,duration,frequency,client_id)=>{   
+  axios.post("http://localhost:3000/api/clientProgram/add",
+  {type,intensity,duration,frequency,client_id}).then((list)=>{
+    console.log(list)
+    setSucess(!sucess)
+  }).catch((err)=>{
+  console.log(err)
+  })
+    }
+    const deleteProgram=(id)=>{
+axios.delete(`http://localhost:3000/api/clientProgram/${id}`).then((list)=>{
+  setSucess(!sucess)
+}).catch((err)=>{
+  console.log(err)
+})
+    }
   
   return (
-    <div className='client-details'>
-      <button type="button" className='button' onClick={() => { props.deleted(props.clientList.id) }}>❌</button>
-      <h3 className='client-name'>name :{props.clientList.name}
-      </h3>
-      <h3> age    :{props.clientList.age}</h3>
-      <h3> Weight :{props.clientList.weight}</h3>
-      <button type="button" onClick={() => { setShow(!show) }}>Add Program</button>
 
+    <div className='client-details'>
+      <div className='container'>
+      <div className='details-container'>
+        
+        <button type="button" className='button' onClick={() => { props.deleted(props.clientList.id) }}>❌</button>
+        <h3 className='client-name'>name :{props.clientList.name}
+        </h3>
+        <h3> age    :{props.clientList.age}</h3>
+        <h3> Weight :{props.clientList.weight}</h3>
+        <button type="button" onClick={() => { setShow(!show) }}>Add Program</button>
+  
+        </div>
+      <div className='program-container' >
+      <div className='prog'>
+
+Program List 🏋️‍♀️
+      {data.map((prog)=>{
+            return(
+  
+              <ProgramList prog={prog} deleted={deleteProgram} clientId={props.clientList.id}/>
+            )
+          })}
+          </div>
+      </div>
+      </div>
+      
       {show ? <div>
         <ul className="list-program ">
-        {data.map((prog)=>{
-          return(
-
-            <ProgramList prog={prog}/>
-          )
-        })}
+        
           {props.program.map((list) => {
 
-            return (<ProgramDet list={list} programList={props.programList} clientId={props.clientList.id} />
+            return (<ProgramDet list={list} programList={programList}  clientId={props.clientList.id}  />
 
             )
 

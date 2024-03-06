@@ -9,18 +9,19 @@ const AddClient = (props) => {
     const [coach_id,setCoach]=useState(0)
     
 
-    return (
-    <div>
+    return (<center>
+    <div className='add-container'>
         <div>
-        <input onChange={(e)=>{setName(e.target.value)}} placeholder='name' type='text'/>
+        <input onChange={(e)=>{setName(e.target.value)}} placeholder='name' type='text' className='add-input'/>
         </div>
      
-      <input onChange={(e)=>{setAge(e.target.value)}} placeholder='Age' type='number'/>
-      <input onChange={(e)=>{setWeight(e.target.value)}} placeholder='Weight' type='number'/>
+      <input onChange={(e)=>{setAge(e.target.value)}} placeholder='Age' type='number' className='add-input'/>
+      <input onChange={(e)=>{setWeight(e.target.value)}} placeholder='Weight' type='number' className='add-input'/>
     
-      <input onChange={(e)=>{setCoach(e.target.value)}} placeholder='Coach' type='number' />
-      <input type="button" value="Add To List" onClick={()=>props.create(name,age,weight,coach_id)} />
+      <input onChange={(e)=>{setCoach(e.target.value)}} placeholder='Coach' type='number' className='add-input' />
+      <input type="button" value="Add To List" onClick={()=>props.create(name,age,weight,coach_id)} className='add-input-button'/>
     </div>
+    </center>
   )
 }
 

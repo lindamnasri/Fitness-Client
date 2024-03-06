@@ -23,6 +23,15 @@ getProgram:(req,res)=>{
     }).catch((err)=>{
         res.send(err)
     })
+    },
+    deleteOne:(req,res)=>{
+        const id=req.params.id
+        clientProgram.delete(id).then((list)=>{
+            res.status(202).json(list)
+        }).catch((err)=>{
+            res.status(500).send(err)
+        })
+    
     }
 
 

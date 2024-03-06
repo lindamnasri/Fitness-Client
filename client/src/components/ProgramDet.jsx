@@ -1,16 +1,15 @@
 import React,{useState}from 'react'
-import ProgramList from './ProgramList.jsx'
-const ProgramDet = ({list,programList,clientId}) => {
+
+const ProgramDet = ({list,programList,clientId})=> {
     const [showDet,setShowDet]=useState(false)
-    // const handleAdd=()=>{
-    //     programList(type,intensity,duration,frequency,client_id)
-    // programList(list.type,list.intensity,list.duration,list.frequency,clientId) }
+   
   return (
     <div>
       
     <h3 className="list" onClick={()=>{setShowDet(!showDet)}}>{list.type} 
       </h3> 
-      <button type="button" onClick={()=>{ console.log("err") }}>➕</button> 
+      <button type="button" onClick={()=>{ programList(list.type,list.intensity,list.duration,list.frequency,clientId) }}>➕</button> 
+      
    {showDet?<div>
     <ul className="list-list">
       <li className="list">{list.intensity}</li>

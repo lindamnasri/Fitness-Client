@@ -9,19 +9,20 @@ const Program = (props) => {
    
     
   return ( 
-  <div>
-      <div>
-        <input onChange={(e)=>{setType(e.target.value)}} placeholder='type' type='text'/>
+  <div className='container-prog'>
+      <div className='prog-container'>
+        <input onChange={(e)=>{setType(e.target.value)}} placeholder='type' type='text' className='prog-input'/>
         </div>
            
-      <input onChange={(e)=>{setIntensity(e.target.value)}} placeholder='intensity' type='text'/>
-      <input onChange={(e)=>{setDuration(e.target.value)}} placeholder='duration' type='text'/>
+      <input onChange={(e)=>{setIntensity(e.target.value)}} placeholder='intensity' type='text' className='prog-input'/>
+      <input onChange={(e)=>{setDuration(e.target.value)}} placeholder='duration' type='text' className='prog-input'/>
     
-      <input onChange={(e)=>{setFrequency(e.target.value)}} placeholder='frequency' type='text' />
-      <input type="button" value="Add New Program" onClick={()=>props.create(type,intensity,duration,frequency)} />
+      <input onChange={(e)=>{setFrequency(e.target.value)}} placeholder='frequency' type='text' className='prog-input'/>
+      <input type="button" value="Add New Program" onClick={()=>props.create(type,intensity,duration,frequency)} className='prog-button'/>
 
    
-    <div>
+    <div/>
+
     <ul className="list-program ">
           {props.program.map((list)=>{
            return( <div>
@@ -39,7 +40,7 @@ const Program = (props) => {
     
     
      </div>
-     </div>
+     
   )
 }
 
